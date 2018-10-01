@@ -68,6 +68,15 @@ namespace BejegyzesProject
             }
 
             Console.ReadLine();
+
+            int max = 0;
+            
+            for (int i = 0; i < bejegyzesek.Count; i++)
+                if (bejegyzesek[i].Likeok > max)
+                    max = bejegyzesek[i].Likeok;
+
+            Console.WriteLine("A legtöbb like-al rendelkező bejegyzés sorszáma: " + max);
+            Console.ReadLine();
         }
     }
 }
