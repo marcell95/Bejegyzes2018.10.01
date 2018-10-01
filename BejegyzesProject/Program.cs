@@ -73,7 +73,7 @@ namespace BejegyzesProject
             int maxlike = 0;
 
             for (int i = 0; i < bejegyzesek.Count; i++)
-                if (bejegyzesek[i].Likeok > max)
+                if (bejegyzesek[i].Likeok > maxlike)
                 {
                     maxlike = bejegyzesek[i].Likeok;
                     max = i;
@@ -91,6 +91,8 @@ namespace BejegyzesProject
             {
                 Console.WriteLine("Nincs olyan bejegyzés, melynek 35-nél több like-ja van.");
             }
+
+            Console.ReadLine();
 
         }
     }
