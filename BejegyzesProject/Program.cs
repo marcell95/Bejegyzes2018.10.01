@@ -70,7 +70,11 @@ namespace BejegyzesProject
             Console.ReadLine();
 
             int max = 0;
-            int maxlike = 0;
+            int maxlike = bejegyzesek[0].Likeok;
+            int tizenotAlatt = 0;
+
+            int min = 0;
+            int minlike = bejegyzesek[0].Likeok;
 
             for (int i = 0; i < bejegyzesek.Count; i++)
                 if (bejegyzesek[i].Likeok > maxlike)
@@ -78,9 +82,19 @@ namespace BejegyzesProject
                     maxlike = bejegyzesek[i].Likeok;
                     max = i;
                 }
+            
+            for (int i = 0; i < bejegyzesek.Count; i++)
+                if (bejegyzesek[i].Likeok < minlike)
+                {
+                    minlike = bejegyzesek[i].Likeok;
+                    min = i;
+                }
 
+            Console.WriteLine("A legkevesebb like-al rendelkező bejegyzés sorszáma: " + min);
             Console.WriteLine("A legtöbb like-al rendelkező bejegyzés sorszáma: " + max);
             Console.ReadLine();
+
+
 
             if (maxlike > 35)
             {
@@ -92,8 +106,15 @@ namespace BejegyzesProject
                 Console.WriteLine("Nincs olyan bejegyzés, melynek 35-nél több like-ja van.");
             }
 
-            Console.ReadLine();
 
+            for (int i = 0; i < bejegyzesek.Count; i++)
+                if (bejegyzesek[i].Likeok < 15)
+                {
+                    tizenotAlatt++;
+                }
+            Console.WriteLine("15-nél kevesebb like-ot kapott bejegyzések száma: " + tizenotAlatt);
+
+            Console.ReadLine();
         }
     }
 }
